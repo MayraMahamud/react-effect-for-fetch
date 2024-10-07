@@ -5,10 +5,15 @@ import FavouriteSlipsList from "./components/FavouriteSlipsList";
 function AdviceSection() {
   const [advice, SetAdvice] = useState([]);
  
- useEffect(() => {
-    fetch('https://api.adviceslip.com/')
-    .then(response => response.json()).then(data => SetArtwork(data))
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await fetch('https://api.adviceslip.com/');
+      const jsonData = await response.json();
+      SetAdvice(jsonData);
+    };
+    fetchData();
   }, []);
+
  
  
  
@@ -16,9 +21,9 @@ function AdviceSection() {
   return (
     <section>
       <h2>Advice Section</h2>
-     <AdviceSlip></AdviceSlip>
+   /  
   <section className="favourtite-slips-list">
-  <FavouriteSlipsList></FavouriteSlipsList>
+
   </section>
     </section>
   )

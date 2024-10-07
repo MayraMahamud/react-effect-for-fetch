@@ -1,19 +1,21 @@
 import React from 'react'
 
-function UsersListItem({ user, key }) {
+function UsersListItem({ user }) {
   return (
-   {/*} <li style="background: #0d7f26;">
+  
+    <li style={{background: `${user.favouriteColour}`}}>
     <img
       src={`${user.profileImage}`}
       alt="Ritthy Ryan"
     />
-    <h3>{user.firstName}</h3>
+    <h3>{user.firstName} {user.lastName}</h3>
+    
 
 
     <p>Email: {user.email}</p>
 
-  </li>
-   */}
+</li>
+   
   )
 }
 

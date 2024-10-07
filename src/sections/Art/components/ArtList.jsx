@@ -1,15 +1,17 @@
 import React from 'react'
+import ArtListItem from './ArtListItem'
 
-function ArtList() {
+function ArtList({ artwork }) {
+console.log(artwork)
   return (
     <ul className="art-list">
-     
-        
-        <h3>Paris Street; Rainy Day</h3>
-        <p>Artist: Gustave Caillebotte</p>
-       
-        </ul>
+   {
+    artwork.map((art, index) => (
+      <ArtListItem art={art} key={index}/>
+    ))
+   
+   }
+  </ul>
   )
 }
-
 export default ArtList

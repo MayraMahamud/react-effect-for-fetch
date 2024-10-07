@@ -22,7 +22,7 @@ function UsersSection() {
     <section>
       <h2>Users Section</h2>
       <div className="scroll-container"> 
-<UsersList users={users}/>
+   <UsersList users={users}/>
       </div>
       
 

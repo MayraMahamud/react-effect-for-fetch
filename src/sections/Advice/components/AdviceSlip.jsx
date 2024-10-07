@@ -1,6 +1,6 @@
 import React from 'react'
 
-function AdviceSlip() {
+function AdviceSlip({ slip }) {
   return (
     <section className="adivce-slip">
     <h3>Some Advice</h3>

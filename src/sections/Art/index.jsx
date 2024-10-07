@@ -10,8 +10,12 @@ function ArtsSection() {
   const [artwork, SetArtwork] = useState([]);
 
   useEffect(() => {
-    fetch("https://boolean-uk-api-server.fly.dev//images/paris-street-rainy-day.jpg")
-    .then(response => response.json()).then(data => SetArtwork(data))
+    const fetchData = async () => {
+      const response = await fetch('https://boolean-uk-api-server.fly.dev/art');
+      const jsonData = await response.json();
+      SetArtwork(jsonData);
+    };
+    fetchData();
   }, []);
 
   
@@ -24,15 +28,15 @@ function ArtsSection() {
       <h2>Arts Section</h2>
       <div className="scroll-container">
       <ul className="art-list">
-        <ArtList></ArtList>
+      <ArtList artwork={artwork}/>
    
         <div className="frame">
-          <ArtListItem></ArtListItem>
+       
        
         </div>
      </ul> 
         <h4>Publication History:</h4>
-        <PublicationHistoryList></PublicationHistoryList>
+       {/* <PublicationHistoryList></PublicationHistoryList>****/}
         <ul>
 
     </ul>
